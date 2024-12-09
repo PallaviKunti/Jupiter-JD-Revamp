@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Webpage</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+            font-size:13px;
+        }
+        header {
+            background-color: #e76b4f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav img {
+            max-width: 150px;
+            height: auto;
+        }
+        /* Main content area */
+        .content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .main-content {
+            flex: 3;
+            margin-right: 20px;
+            min-width: 300px;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+            min-width: 200px;
+        }
+        /* Button styling */
+        button {
+            background-color: teal;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkcyan;
+        }
+        /* Job Description styling */
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .job-details {
+            font-size: 16px;
+            margin: 5px 0;
+            
+        }
+        .share-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-list {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        list-style-type: none;
+        margin: 0;
+        padding: 5px 0;
+        width: 200px;
+        z-index: 1000;
+    }
+
+    .dropdown-list li {
+        padding: 10px;
+        text-align: left;
+    }
+    .dropdown-list li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .dropdown-list li:hover {
+        background-color: #f2f2f2;
+    }
+        .job-description {
+            margin: 20px 0;
+        }
+        .sub-content a {
+            text-decoration: none;
+        }
+        .sidebar-content {
+            margin-top: 20px;
+        }
+        .prototype-container {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        .prototype-container iframe {
+            width: 100%;
+            height: 600px;
+        }
+        .read-more-btn {
+            background-color: transparent;
+            color: teal;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .read-more-btn:hover {
+            color: #fb7b69;
+        }
+        .more-content {
+            display: none;
+        }
+        /* Video styling */
+        video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Media fr responsiveness */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .main-content {
+                margin-right: 0;
+                flex: 1;
+            }
+            .sidebar {
+                margin-top: 20px;
+                flex: 1;
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+            .job-title {
+                font-size: 20px;
+            }
+            .job-details {
+                font-size: 14px;
+            }
+            .main-content {
+                margin-right: 0;
+            }
+            footer {
+                font-size: 14px;
+            }
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <img src=" " alt="Logo"> <!-- Jupiter logo -->
+    </nav>
+</header>
+
+<div class="content">
+    <section class="main-content">
+        <div class="job-title">Senior Manager - Partnerships (Credit Cards)  </div>
+        <div class="job-details">
+            ID: 511 | 6-10 yrs |  
+            <a href="https://maps.app.goo.gl/MCDZ2avf9VxgEkom6" target="_blank">Bangalore</a> | 
+            <a href="https://jupiter.money/careers/#all-openings">View Jobs</a> |
+            <span class="share-dropdown">
+                <a href="#" onclick="toggleDropdown()">Share this job</a>
+                <ul class="dropdown-list" id="dropdownList">
+                    <li><a href="" target="_blank">Twitter</a></li>
+                    <li><a href="" target="_blank">WhatsApp</a></li>
+                    <li><a href="" target="_blank">LinkedIn</a></li>
+                </ul>
+            </span>
+            
+        </div>
+        <button id="applyButton">Apply Now</button>
+
+        <div class="job-description">
+            <h3>Who we're looking for:</h3>
+            <ul>
+                <li>Develop and implement partnership strategies to increase credit card issuance and spending at Jupiter.Money.</li>
+                <li>Work closely with the Business Head for Credit Cards to align partnership goals with business objectives.</li>
+                <li>Identify and pursue potential strategic partnerships with key merchants across various industries.</li>
+                <li>Negotiate and manage partnerships to expand Jupiter.Money’s market presence and customer base.</li>
+                <li>Drive business growth by fostering long-term, impactful relationships with merchant partners.</li>
+            </ul>
+        </div>
+        
+        <div class="job-description">
+            <h3>Role's and Responsibilities:</h3>
+            <ul>
+                <h3>Partnership Strategy</h3>
+                <li> Create and execute partnership strategies to align with business goals.</li>
+                <li>Identify opportunities to grow the credit card business through partnerships.</li>
+                <h3>Relationship Management</h3>
+                <li>Foster and maintain strong partnerships with banks, merchants, and financial institutions.</li>
+                <li>Act as the main contact for partners, ensuring smooth communication.</li>
+                <h3>Negotiation & Contracting</h3>
+                <li>Lead negotiations to establish win-win agreements.</li>
+                <li>Draft and finalize partnership contracts, ensuring legal comliance</li>
+                <h3>Collaboration & Integration</h3>
+                <li>Work with product, marketing, finance, and legal teams to integrate partnerships effectively.</li>
+                <li>Align with internal stakeholders to optimize partnership outcomes.</li>
+                <h3>Performance Tracking & Optimization</h3>
+                <li>Monitor partnership performance and provide insights to management.</li>
+                <li>Identify areas for improvement and implement strategies to enhance ROI.</li>     
+            </ul>
+            <div class="job-description">
+                <h3>What is Needed for This Role:</h3>
+                <ul>
+                <li>5+ years of experience in partnership management, business development, or similar roles within financial services.</li>
+                <li>Proven success in developing and managing strategic partnerships, preferably in credit cards or banking.</li>
+                <li>Strong negotiation skills and ability to achieve win-win outcomes in complex deals.</li>
+                <li>Excellent communication and relationship-building skills at all levels.</li>
+                <li>Analytical mindset, with the ability to use data and insights for decision-making.</li>
+                <li>Self-motivated and results-driven, thriving in a fast-paced, entrepreneurial environment.</li>
+            </ul>
+            <div class="job-description">
+                <h3>Why you should work with us</h3>
+                <ul>
+                    <li>We value ownership and individuals who take responsibility to see projects through.</li>
+                    <li>We tackle meaningful problems by understanding pain points and creating customer-centric solutions.</li>
+                    <li>We encourage healthy debate and value commitment to decisions over consensus.</li>
+                    <li>We’re committed to excellence and continuous improvement. If you seek growth and learning in a dynamic environment, Jupiter is the right choice.</li>
+                </ul>
+            <div class="job-description">
+                <h3>Our Hiring Process</h3>
+            <ol>
+                <h5>Application Review</h4>
+                    <li>We carefully evaluate your application to ensure your skills and experience match our needs. We look for proven success and a potential fit for our team.</li>
+                <h5> Interview with the Hiring Manager</h5>   
+                    <li>In this step, we’ll explore your fit for the role. It’s also your chance to get to know us better—ask questions, share your vision, and complete any assignments.</li>
+                <h5>Culture Check</h5>    
+                    <li>We believe in hiring people who align with our values. This round is all about making sure your approach, mindset, and values resonate with ours.</li>
+                <h5>Offer</h5>
+                    <li>If we’re aligned on skills, culture, and expectations, we’ll extend an offer. This is where your journey with us begins.</li>     
+            </ol>   
+            <div class="job-description">
+                <h3>Want to know more about us? Hop onto the links below:</h3>
+                <ul>
+                <li><a href="">Our Values</a></li>
+                <li><a href="">Our Team</a></li>
+                <li><a href="">Our Journey</a></li>
+            </ul>
+            <div class="job-description">
+                <h3>What people are saying about us: - </h3>
+                <ul>
+                <li><a href="">Funding</a></li>
+                <li><a href="">Rupay Card</a></li>
+                <li><a href="">Feature launch- Magic Spends</a></li>
+            </ul>
+
+    </section>
+
+    <!-- Sidebar Content -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <h3>Who We Are:</h3>
+            <p id="short-desc">Money. A subject that’s always on our mind. We go through a rollercoaster of emotions when it comes to money.</p>
+            <button class="read-more-btn" id="readMoreBtn">Read More</button>
+            <div class="more-content" id="full-desc">
+                <p> That’s why at Jupiter, our mission is to enable people to improve their relationship with money.</p>
+                <p>We are a financial services platform that leverages technology to offer our customers seamless and user-friendly products related to banking, loans, and investments. So whether it’s a savings account, credit cards, investment, and payments, it's all on Jupiter. We also help users cut through the banking jargons, offer smart insights based on spending, and provide users with a range of new age features to enable and make sense of their finances.</p>
+                <a href="https://trello.com/b/gehmc4Ig/building-jupiter">Click here for more</a>
+            </div>
+        </div>
+        <!-- New Section: Our Journey So Far -->
+    <div class="sidebar-content">
+        <h3>Our Journey So Far:</h3>
+        <p id="short-journey">Jupiter was founded in 2019 by Jitendra Gupta. Best known as Citrus Pay’s founder, Jiten found himself wondering why personal finance experiences were not customer-centric when everything else like food ordering and entertainment, were.</p>
+        <button class="read-more-btn" id="readMoreJourneyBtn">Read More</button>
+        <div class="more-content" id="full-journey-desc">
+            <p>Our journey began in 2019, with a simple, powerful idea: to create a modern, customer-centric experience that empowers individuals when it comes to their money.</p>
+            <p>From our humble beginnings, we've strived relentlessly to make managing money easier. In 2021 when we launched, we had a waitlist with over 100,000 people eager to experience the world of Jupiter - and within 10 months we crossed 1 million users. Today, we have 2.7 million+ happy users on Jupiter.</p>
+            <p>Our Insights feature today tells how much and where you’ve been spending automatically, even on your other savings accounts! Our Edge CSB Bank RuPay credit card is getting a lot of love for its head-turning transparent design, not to mention it being a rewarding experience. Our No-Penalty SIP and Daily SIP at Rs 10/- has helped scale our investment business, and we have over 100,000 users investing on our platform to fulfill their money aspirations.</p>
+            <p>We've embraced cutting-edge technology, harnessed the power of data analytics, and assembled a diverse team of creative thinkers and industry experts who share our vision for a more accessible, transparent, and inclusive financial ecosystem. We’re now looking for like-minded folks to join the crew.</p>
+        </div>
+    </div>
+
+<!-- Insert Image here -->
+<div class="sidebar-content">
+    <img src="C:\Users\palla\Downloads/Our Journey.png" alt="Our Journey Image" style="width: 100%; height: auto; margin-top: 20px;">
+</div>
+
+        <br><br>
+
+        <h3>Hiring Manager</h3>
+                <a href="https://www.linkedin.com/in/cssrinivasarao" target="_blank">C.S Srinivas Rao</a>
+        <h3>Whom you are working with: </h3>
+        <ul>        
+                <li><a href="" target="_blank">Employee 1</a></li>
+                <li><a href="" target="_blank">Employee 2</a></li>
+                <li><a href="" target="_blank">Employee 3</a></li>      
+                <br><br>
+            </ul>
+        <!-- Video  -->
+        <video controls>
+            <source src="path_to_your_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Jupiter app link-->
+        <h3>App Link</h3>
+        <a href="https://play.google.com/store/apps/details?id=money.jupiter&pcampaignid=web_share" target="_blank">Download Jupiter App</a>
+
+        <!-- Prototype Embed -->
+        <div class="prototype-container">
+            <h3>Our Prototype</h3>
+            <iframe src="https://www.figma.com/proto/puMnqtJjDkV7P4gIOQUZYF/Home-3.0?node-id=16494-329057&starting-point-node-id=16494%3A328529&node-type=section&t=FMfQ9aLF2SExcogj-11&locale=en" frameborder="0"></iframe>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2023 Jupiter. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('applyButton').addEventListener('click', function() {
+        alert('Application Submitted!');
+    });
+
+    document.getElementById('readMoreBtn').addEventListener('click', function() {
+        var fullDesc = document.getElementById('full-desc');
+        var shortDesc = document.getElementById('short-desc');
+        var btn = document.getElementById('readMoreBtn');
+
+        fullDesc.style.display = fullDesc.style.display === 'block' ? 'none' : 'block';
+        btn.textContent = fullDesc.style.display === 'block' ? 'Read Less' : 'Read More';
+        shortDesc.style.display = fullDesc.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Read more functionality for the new "Our Journey So Far" section
+document.getElementById('readMoreJourneyBtn').addEventListener('click', function() {
+    var fullJourneyDesc = document.getElementById('full-journey-desc');
+    var shortJourneyDesc = document.getElementById('short-journey');
+    var btnJourney = document.getElementById('readMoreJourneyBtn');
+
+    fullJourneyDesc.style.display = fullJourneyDesc.style.display === 'block' ? 'none' : 'block';
+    btnJourney.textContent = fullJourneyDesc.style.display === 'block' ? 'Read Less' : 'Read More';
+    shortJourneyDesc.style.display = fullJourneyDesc.style.display === 'block' ? 'none' : 'block';
+});
+
+function toggleDropdown() {
+        const dropdown = document.getElementById('dropdownList');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Optional: Close dropdown if clicked outside
+    window.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('dropdownList');
+        const link = document.querySelector('.share-dropdown a');
+        if (!link.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+
+</script>
+
+</body>
+</html>
